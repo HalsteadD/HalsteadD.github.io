@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Desiree Fulton - Projects</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="CSS/lightbox.min.css" rel="stylesheet" />
+    <script src="js/lightbox-plus-jquery.min.js"></script>
+    <link href="CSS/800_1000.css" rel="stylesheet" />
+    <link rel="icon" href="images/favicon.png">
+	
+</head>
+
+<body>
+	
+	<div class="headercolor">
+        <header class="headercontainer">
+        <div class="logo">DESIREE FULTON</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Design.html">Design</a></li>
+				<li><a href="Projects_menu.html">Projects</a></li>
+                <li><a href="Photography.html">Photography</a></li>
+                <li><a href="Traditional_Art.html">Art</a></li>
+                <li><a href="Contact_form.html">Contact me</a></li>
+            </ul>    
+        </nav>
+      </header>
+      </div>
+    
+   <div>
+    	<div class="twocolumncontainer">
+    		<div class="twocolumnimage">
+               	<img src="images/Illuminate/12001_Illuminate_0106f.jpg"; width="100%">
+            </div>
+            <div class="twocolumntext"><br>
+				<div class="twocolumntitle">
+					Illuminate
+				</div>
+                <p>
+                	Illuminate, an annual event hosted by apree health, is a marketing event spanning multiple days. Speakers from multiple industries speak on healthcare issues in the United States at panels during the event. This event takes several months of planning, and multi-team coordination to happen.
+					<br><br>
+					I was responsible for updating the Illuminate event branding to fit within the new apree health branding, and creating PowerPoint templates, posters, wayfinding signage, swag, emails, social, and printed collateral. This involved weekly meeting with other teams to coordinate event planning, tracking multiple work streams, and delegating when possible.
+       			</p>
+			</div>
+    	</div>
+	</div>
+	
+	<div>
+    	<section id="photos">
+        	<a href="images/Illuminate/12001_Illuminate_0001f.jpg" data-lightbox="mygallery" class="imga"><img src="images/Illuminate/12001_Illuminate_0001f.jpg"></a>
+			<a href="images/Illuminate/12001_Illuminate_0014f.jpg" data-lightbox="mygallery" class="imga"><img src="images/Illuminate/12001_Illuminate_0014f.jpg"></a>
+			<a href="images/Illuminate/12001_Illuminate_0041f.jpg" data-lightbox="mygallery" class="imga"><img src="images/Illuminate/12001_Illuminate_0041f.jpg"></a>
+			<a href="images/Illuminate/12001_Illuminate_0167f.jpg" data-lightbox="mygallery" class="imga"><img src="images/Illuminate/12001_Illuminate_0167f.jpg"></a>
+			<a href="images/Illuminate/12001_Illuminate_0019f.jpg" data-lightbox="mygallery" class="imga"><img src="images/Illuminate/12001_Illuminate_0019f.jpg"></a>
+			<a href="images/Illuminate/12001_Illuminate_0023f.jpg" data-lightbox="mygallery" class="imga"><img src="images/Illuminate/12001_Illuminate_0023f.jpg"></a>
+			<a href="images/Illuminate/12001_Illuminate_0015f.jpg" data-lightbox="mygallery" class="imga"><img src="images/Illuminate/12001_Illuminate_0015f.jpg"></a>
+			<a href="images/Illuminate/12001_Illuminate_0117f.jpg" data-lightbox="mygallery" class="imga"><img src="images/Illuminate/12001_Illuminate_0117f.jpg"></a>
+			<a href="images/Illuminate/12001_Illuminate_0112f.jpg" data-lightbox="mygallery" class="imga"><img src="images/Illuminate/12001_Illuminate_0112f.jpg"></a>
+    	</section>
+    </div>
+	
+	<br>
+	
+	<div class="slideshow-container">
+        <a href="Project_apree health.html"><img src="images/DF_website_next project banner.jpg" style="width: 100%"></a>
+	</div>
+	
+	<br>
+	
+    <div class="footer">
+        <div class="footercontent">
+            &copy; Desiree Fulton
+        </div>
+    </div>
+</body>
+    
+<script>
+    
+ /*Slideshow______________________________________________________________________________________________________________________*/      
+        var slideIndex = 1;
+
+var myTimer;
+
+var slideshowContainer;
+
+window.addEventListener("load",function() {
+    showSlides(slideIndex);
+    myTimer = setInterval(function(){plusSlides(1)}, 4000);
+  
+    //COMMENT OUT THE LINE BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+    slideshowContainer = document.getElementsByClassName('slideshow-inner')[0];
+  
+    //UNCOMMENT OUT THE LINE BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+    // slideshowContainer = document.getElementsByClassName('slideshow-container')[0];
+  
+    slideshowContainer.addEventListener('mouseenter', pause)
+    slideshowContainer.addEventListener('mouseleave', resume)
+})
+
+// NEXT AND PREVIOUS CONTROL
+function plusSlides(n){
+  clearInterval(myTimer);
+  if (n < 0){
+
+    showSlides(slideIndex -= 1);
+  } else {
+   showSlides(slideIndex += 1); 
+  }
+  
+  //COMMENT OUT THE LINES BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+  
+  if (n === -1){
+    myTimer = setInterval(function(){plusSlides(n + 2)}, 4000);
+  } else {
+    myTimer = setInterval(function(){plusSlides(n + 1)}, 4000);
+  }
+}
+
+//Controls the current slide and resets interval if needed
+function currentSlide(n){
+  clearInterval(myTimer);
+  myTimer = setInterval(function(){plusSlides(n + 1)}, 4000);
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n){
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
+pause = () => {
+  clearInterval(myTimer);
+}
+
+resume = () =>{
+  clearInterval(myTimer);
+  myTimer = setInterval(function(){plusSlides(slideIndex)}, 4000);
+}
+/*end slideshow______________________________________________________________________________________________________________*/
+</script>
+    
+    
+</html>

@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Desiree Fulton - Projects</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="CSS/lightbox.min.css" rel="stylesheet" />
+    <script src="js/lightbox-plus-jquery.min.js"></script>
+    <link href="CSS/800_1000.css" rel="stylesheet" />
+    <link rel="icon" href="images/favicon.png">
+	
+</head>
+
+<body>
+	
+	<div class="headercolor">
+        <header class="headercontainer">
+        <div class="logo">DESIREE FULTON</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Design.html">Design</a></li>
+				<li><a href="Projects_menu.html">Projects</a></li>
+                <li><a href="Photography.html">Photography</a></li>
+                <li><a href="Traditional_Art.html">Art</a></li>
+                <li><a href="Contact_form.html">Contact me</a></li>
+            </ul>    
+        </nav>
+      </header>
+	</div>
+    
+	<div>
+    	<div class="twocolumncontainer">
+   		  <div class="twocolumnimage">
+               	<img src="images/Projects_thumbnail_castlight social.jpg"; width="100%">
+            </div>
+            <div class="twocolumntext"><br>
+				<div class="twocolumntitle">
+					Castlight Health Social Media Templates
+				</div>
+                <p>
+                	At Castlight Health, I developed extensive social media post templates to be used across multiple social media sites. Using these templates, we grew the social media following by 75%.
+       			</p>
+			</div>
+    	</div>
+	</div>
+	
+	<div class="twocolumnbackgroundcolour">
+		<div class="section"><br><br>
+			<p class="sectiontitle">
+				Template Breakdown
+			</p>
+			<p class="sectioncopy">
+				When I joined Castlight Health, the social media templates were varied, with a wide range of colors, image treatments, and styles. In collaboration with other teams, I developed templates with standard treatments for headshots, logo placement, background colors and patterns, and more.  <br>
+			</p><br><br>
+			<img src="images/projects/castlight health social/castlight health_template breakdown.jpg" class="sectionimgfull">
+			<br><br><br>
+		</div>
+	</div>
+	
+	<div class="section"><br><br>
+  		<p class="sectiontitle">
+			Series templates
+		</p>
+  		<p class="sectioncopy">
+            Within the social media templates, I created multiple series for images we needed for regular posts. These took the standards of how headshots, logos, and backgrounds were designed and broke out in their own way to make an identifiable series, while maintaining a consistent, but not repetitive, feed. <br>
+       	</p><br><br>
+    	<img src="images/projects/castlight health social/apree health_social media.jpg" class="sectionimgfull">
+		<br><br><br>
+	</div>
+	
+	<br>
+	
+	<div class="slideshow-container">
+        <a href="Project_Illuminate.html"><img src="images/DF_website_next project banner.jpg" style="width: 100%"></a>
+	</div>
+	
+	<br>
+	
+    <div class="footer">
+      <div class="footercontent">
+            &copy; Desiree Fulton
+      </div>
+    </div>
+</body>
+    
+<script>
+    
+ /*Slideshow______________________________________________________________________________________________________________________*/      
+        var slideIndex = 1;
+
+var myTimer;
+
+var slideshowContainer;
+
+window.addEventListener("load",function() {
+    showSlides(slideIndex);
+    myTimer = setInterval(function(){plusSlides(1)}, 4000);
+  
+    //COMMENT OUT THE LINE BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+    slideshowContainer = document.getElementsByClassName('slideshow-inner')[0];
+  
+    //UNCOMMENT OUT THE LINE BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+    // slideshowContainer = document.getElementsByClassName('slideshow-container')[0];
+  
+    slideshowContainer.addEventListener('mouseenter', pause)
+    slideshowContainer.addEventListener('mouseleave', resume)
+})
+
+// NEXT AND PREVIOUS CONTROL
+function plusSlides(n){
+  clearInterval(myTimer);
+  if (n < 0){
+
+    showSlides(slideIndex -= 1);
+  } else {
+   showSlides(slideIndex += 1); 
+  }
+  
+  //COMMENT OUT THE LINES BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+  
+  if (n === -1){
+    myTimer = setInterval(function(){plusSlides(n + 2)}, 4000);
+  } else {
+    myTimer = setInterval(function(){plusSlides(n + 1)}, 4000);
+  }
+}
+
+//Controls the current slide and resets interval if needed
+function currentSlide(n){
+  clearInterval(myTimer);
+  myTimer = setInterval(function(){plusSlides(n + 1)}, 4000);
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n){
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
+pause = () => {
+  clearInterval(myTimer);
+}
+
+resume = () =>{
+  clearInterval(myTimer);
+  myTimer = setInterval(function(){plusSlides(slideIndex)}, 4000);
+}
+/*end slideshow______________________________________________________________________________________________________________*/
+</script>
+    
+    
+</html>

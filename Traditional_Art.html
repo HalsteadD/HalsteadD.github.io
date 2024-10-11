@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Desiree Fulton - Traditional Art</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="CSS/lightbox.min.css" rel="stylesheet" />
+    <script src="js/lightbox-plus-jquery.min.js"></script>
+    <link href="CSS/800_1000.css" rel="stylesheet" />
+    <link rel="icon" href="images/favicon.png">
+	
+</head>
+
+<body>
+	
+	<div class="headercolor">
+        <header class="headercontainer">
+        <div class="logo">DESIREE FULTON</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Design.html">Design</a></li>
+				<li><a href="Projects_menu.html">Projects</a></li>
+                <li><a href="Photography.html">Photography</a></li>
+                <li><a href="Traditional_Art.html">Art</a></li>
+                <li><a href="Contact_form.html">Contact me</a></li>
+            </ul>    
+        </nav>
+      </header>
+      </div>
+	
+<div>
+    <section id="photos">
+        <a href="images/Harpy_AllSides_SM.jpg" data-lightbox="mygallery" class="imga"><img src="images/Harpy_AllSides_SM.jpg"></a>
+        <a href="images/Harpy_Front_SM.jpg" data-lightbox="mygallery" class="imga"><img src="images/Harpy_Front_SM.jpg"></a>
+        <a href="images/miniature-bearrider-cropped_orig.jpg" data-lightbox="mygallery" class="imga"><img src="images/miniature-bearrider-cropped_orig.jpg"></a>
+        <a href="images/20160113-155750-1_2_orig.jpg" data-lightbox="mygallery" class="imga"><img src="images/20160113-155750-1_2_orig.jpg"></a>
+        <a href="images/IMG_20191206_112647875.jpg" data-lightbox="mygallery" class="imga"><img src="images/IMG_20191206_112647875.jpg"></a>
+        <a href="images/Army_SM.jpg" data-lightbox="mygallery" class="imga"><img src="images/Army_SM.jpg"></a>
+        <a href="images/Grunts_SM.jpg" data-lightbox="mygallery" class="imga"><img src="images/Grunts_SM.jpg"></a>
+        <a href="images/Warcaster_front_SM.jpg" data-lightbox="mygallery" class="imga"><img src="images/Warcaster_front_SM.jpg"></a>
+        <a href="images/Warcaster_back_SM.jpg" data-lightbox="mygallery" class="imga"><img src="images/Warcaster_back_SM.jpg"></a>
+        <a href="images/miniature-deathreaper-cropped_orig.jpg" data-lightbox="mygallery" class="imga"><img src="images/miniature-deathreaper-cropped_orig.jpg"></a>
+        <a href="images/Squid_Stamp.jpg" data-lightbox="mygallery" class="imga"><img src="images/Squid_Stamp_Small.jpg"></a>
+        <a href="images/cloak_sitting_2.jpg" data-lightbox="mygallery" class="imga"><img src="images/cloak_sitting_2.jpg"></a>
+        <a href="images/IMG_20191206_112719197.jpg" data-lightbox="mygallery" class="imga"><img src="images/IMG_20191206_112719197.jpg"></a>
+        <a href="images/coffee-kitten_1_orig.jpg" data-lightbox="mygallery" class="imga"><img src="images/coffee-kitten_1_orig.jpg"></a>
+    </section>
+    </div>
+    
+    <div class="footer">
+        <div class="footercontent">
+            &copy; Desiree Fulton
+        </div>
+    </div>
+</body>
+    
+<script>
+    
+ /*Slideshow______________________________________________________________________________________________________________________*/      
+        var slideIndex = 1;
+
+var myTimer;
+
+var slideshowContainer;
+
+window.addEventListener("load",function() {
+    showSlides(slideIndex);
+    myTimer = setInterval(function(){plusSlides(1)}, 4000);
+  
+    //COMMENT OUT THE LINE BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+    slideshowContainer = document.getElementsByClassName('slideshow-inner')[0];
+  
+    //UNCOMMENT OUT THE LINE BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+    // slideshowContainer = document.getElementsByClassName('slideshow-container')[0];
+  
+    slideshowContainer.addEventListener('mouseenter', pause)
+    slideshowContainer.addEventListener('mouseleave', resume)
+})
+
+// NEXT AND PREVIOUS CONTROL
+function plusSlides(n){
+  clearInterval(myTimer);
+  if (n < 0){
+    showSlides(slideIndex -= 1);
+  } else {
+   showSlides(slideIndex += 1); 
+  }
+  
+  //COMMENT OUT THE LINES BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+  
+  if (n === -1){
+    myTimer = setInterval(function(){plusSlides(n + 2)}, 4000);
+  } else {
+    myTimer = setInterval(function(){plusSlides(n + 1)}, 4000);
+  }
+}
+
+//Controls the current slide and resets interval if needed
+function currentSlide(n){
+  clearInterval(myTimer);
+  myTimer = setInterval(function(){plusSlides(n + 1)}, 4000);
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n){
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
+pause = () => {
+  clearInterval(myTimer);
+}
+
+resume = () =>{
+  clearInterval(myTimer);
+  myTimer = setInterval(function(){plusSlides(slideIndex)}, 4000);
+}
+/*end slideshow______________________________________________________________________________________________________________*/
+</script>
+    
+    
+</html>

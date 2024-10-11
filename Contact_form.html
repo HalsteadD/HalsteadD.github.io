@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Desiree Fulton - Contact Me</title>
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="CSS/lightbox.min.css" rel="stylesheet" />
+    <script src="js/lightbox-plus-jquery.min.js"></script>
+    <link href="CSS/800_1000.css" rel="stylesheet" />
+    <link rel="icon" href="images/favicon.png">
+	
+</head>
+
+<body>
+	<div class="headercolor">
+        <header class="headercontainer">
+        <div class="logo">DESIREE FULTON</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Design.html">Design</a></li>
+				<li><a href="Projects_menu.html">Projects</a></li>
+                <li><a href="Photography.html">Photography</a></li>
+                <li><a href="Traditional_Art.html">Art</a></li>
+                <li><a href="Contact_form.html">Contact me</a></li>
+            </ul>    
+        </nav>
+      </header>
+      </div>
+	
+	
+<br>
+    
+    <div class="contact-form-title">
+        <p class="form-title">Interested in my work?</p>
+        <p class="form-subtitle">Contact me at DesireeFultonDesign@gmail.com with your name and details and I'll get back to you as soon as possible</p>
+    </div>
+    
+    <div id="photoscontact">
+        <div>
+            <img src="images/pin_mockup_blackmetal_shark_small.jpg">
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="footercontent">
+            &copy; Desiree Fulton
+        </div>
+    </div>
+</body>
+    
+<script>
+    
+ /*Slideshow______________________________________________________________________________________________________________________*/      
+        var slideIndex = 1;
+
+var myTimer;
+
+var slideshowContainer;
+
+window.addEventListener("load",function() {
+    showSlides(slideIndex);
+    myTimer = setInterval(function(){plusSlides(1)}, 4000);
+  
+    //COMMENT OUT THE LINE BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+    slideshowContainer = document.getElementsByClassName('slideshow-inner')[0];
+  
+    //UNCOMMENT OUT THE LINE BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+    // slideshowContainer = document.getElementsByClassName('slideshow-container')[0];
+  
+    slideshowContainer.addEventListener('mouseenter', pause)
+    slideshowContainer.addEventListener('mouseleave', resume)
+})
+
+// NEXT AND PREVIOUS CONTROL
+function plusSlides(n){
+  clearInterval(myTimer);
+  if (n < 0){
+    showSlides(slideIndex -= 1);
+  } else {
+   showSlides(slideIndex += 1); 
+  }
+  
+  //COMMENT OUT THE LINES BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+  
+  if (n === -1){
+    myTimer = setInterval(function(){plusSlides(n + 2)}, 4000);
+  } else {
+    myTimer = setInterval(function(){plusSlides(n + 1)}, 4000);
+  }
+}
+
+//Controls the current slide and resets interval if needed
+function currentSlide(n){
+  clearInterval(myTimer);
+  myTimer = setInterval(function(){plusSlides(n + 1)}, 4000);
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n){
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
+pause = () => {
+  clearInterval(myTimer);
+}
+
+resume = () =>{
+  clearInterval(myTimer);
+  myTimer = setInterval(function(){plusSlides(slideIndex)}, 4000);
+}
+/*end slideshow______________________________________________________________________________________________________________*/
+</script>
+    
+    
+</html>
